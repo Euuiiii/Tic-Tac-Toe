@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>    
+<body> 
+  <div id="top">
+    <h1>Tic Tac Toe</h1>
+    <div id="hamburger-menu" class="hamburger-menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div> 
+
+  <div id="menu" class="dropdown-menu" style="display:none;">
+    <a href="#home">Home</a>
+    <a href="#projects">Other Projects</a>
+  </div>
+  
+  <h2>This is just a fun project built by EMON ADHIKARI aka. Temujin</h2>
+  
+  <div id="mode-container">
+    <button id="mode">Play with Computer</button>
+    <a href="https://www.instagram.com/temujin__1162/" target="_blank" id="instagram-link">
+      <i class="fab fa-instagram" id="instagram-icon"></i>
+    </a>
+    <a href="https://github.com/Euuiiii" target="_blank" id="github-link">
+      <i class="fab fa-github" id="github-icon"></i>
+    </a>
+  </div>
+  
+  <div id="game">
+    <button class="btn" id="btn1"></button>    
+    <button class="btn" id="btn2"></button>
+    <button class="btn" id="btn3"></button>
+    <button class="btn" id="btn4"></button>
+    <button class="btn" id="btn5"></button>
+    <button class="btn" id="btn6"></button>
+    <button class="btn" id="btn7"></button>
+    <button class="btn" id="btn8"></button>
+    <button class="btn" id="btn9"></button>
+  </div>
+
+  <div id="end-game"> 
+    <input type="button" value="Restart" id="restart" onclick="restartButton()">
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <div id="leaderboard">
+    <div class="score-container">
+      <p>Player X: <span id="scoreX">0</span></p>
+      <p>Player O: <span id="scoreO">0</span></p>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <p>&copy; 2025 EMON ADHIKARI aka. Temujin. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

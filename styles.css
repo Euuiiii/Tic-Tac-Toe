@@ -1,0 +1,330 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+#top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  padding: 10px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+
+
+.hamburger-menu {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
+.hamburger-menu .line {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-decoration-color: cyan;
+}
+
+#menu a {
+  color: cyan;
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+#menu a:hover {
+  background-color: #222;
+}
+
+.hamburger-menu:hover + #menu {
+  display: block;
+}
+
+#leaderboard {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #222;
+  border-radius: 8px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#leaderboard .score-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#leaderboard p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 10px;
+  text-shadow: 0 0 1px cyan, 0 0 1px cyan, 0 0 2px cyan;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  white-space: nowrap;
+  flex-grow: 1;
+  margin: 0;
+  text-shadow: 0 0 10px cyan;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+#mode-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#mode {
+  background-color: cyan;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  transition: all 0.3s ease-in-out;
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+#mode:hover {
+  background-color: rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+@keyframes glowPulse {
+  0% {
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  }
+  100% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  }
+}
+
+#mode-container a {
+  font-size: 1.5em;
+  color: white;
+  transition: 0.3s;
+}
+
+#mode-container a:hover {
+  color: cyan;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(70px, 1fr));
+  grid-template-rows: repeat(3, minmax(70px, 1fr));
+  gap: 5px;
+  margin-top: 20px;
+  background-color: aliceblue;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 100%;
+  height: auto;
+  background: #222;
+  border: 2px solid #222;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+  aspect-ratio: 1 / 1;
+  font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.btn:hover {
+  background: #222;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  #game {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    max-width: 240px; /* Adjust for tablet */
+  }
+
+  .btn {
+    height: 80px;
+    width: 80px;
+    font-size: clamp(0.8rem, 5vw, 1.5rem); /* Smaller font size for tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  #game {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+    max-width: 210px; /* Adjust for mobile */
+  }
+
+  .btn {
+    height: 70px;
+    width: 70px;
+    font-size: clamp(0.6xrem, 5vw, 1.2rem); /* Smaller font size for mobile */
+  }
+}
+
+
+#end-game {
+  margin-top: 20px;
+}
+
+.player-x {
+  color: cyan;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+.player-o {
+  color: cyan;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+
+#instagram-icon, #github-icon {
+  font-size: 40px;
+  margin-left: 10px;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+#instagram-link {
+  color: #E4405F;
+}
+
+#github-link {
+  color: #333;
+}
+
+#instagram-link:hover #instagram-icon, 
+#github-link:hover #github-icon {
+  transform: scale(1.2);
+}
+
+#instagram-link:hover {
+  color: #E4405F;
+}
+
+#github-link:hover {
+  color: #333;
+}
+
+/* This code is copied from the CSS library site */
+#restart {
+  --b: 3px;
+  --s: .45em;
+  --color: cyan;
+  --active-color: #00b3b3;
+
+  padding: calc(1em + var(--s)) calc(1.5em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 20px;
+  border: 0;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* Adjust button for medium screens (tablets) */
+@media (max-width: 768px) {
+  #restart {
+    font-size: 16px; 
+    padding: calc(0.8em + var(--s)) calc(1.2em + var(--s));
+  }
+}
+
+/* Adjust button for small screens (mobiles) */
+@media (max-width: 480px) {
+  #restart {
+    font-size: 14px; 
+    padding: calc(0.6em + var(--s)) calc(1em + var(--s)); 
+  }
+}
+
+#restart:hover,
+#restart:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+#restart:active {
+  background: var(--active-color);
+  color: #0a0101;
+}
+
+.result {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  color: cyan;
+}
+
